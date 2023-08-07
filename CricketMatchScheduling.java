@@ -59,7 +59,7 @@ class CricketMatchScheduling {
 	                {
 	                	if(match.contains(entry.getKey()))
 	                	{	
-	                		System.out.println(entry.getKey()+" was there in the "+match);
+//	                		System.out.println(entry.getKey()+" was there in the "+match);
 	                		isThere = true;
 	                		break;
 	                	}
@@ -67,14 +67,14 @@ class CricketMatchScheduling {
                 }	
                 if(isThere) {
                 	isThere = false;
-                	System.out.println("Skip this key "+entry.getKey());
+//                	System.out.println("Skip this key "+entry.getKey());
                 	continue;
                 }
                 
         		set.add(entry.getKey());
 
-        		System.out.println("Current key: "+entry.getKey());
-        		System.out.println("SET: "+set);
+//        		System.out.println("Current key: "+entry.getKey());
+//        		System.out.println("SET: "+set);
         		List<Integer> opponents = entry.getValue();
         		for(Integer opponent : opponents)
         		{
@@ -94,7 +94,7 @@ class CricketMatchScheduling {
                       	continue;
         			 }
         			set.add(opponent);
-        			System.out.println("SET: "+set);
+//        			System.out.println("SET: "+set);
  	
         			boolean found = false;
 
@@ -107,21 +107,21 @@ class CricketMatchScheduling {
         			if(found)
         			{
         				found = false;
-        				System.out.println("Already the match was held between them so skip the opponent");
+//        				System.out.println("Already the match was held between them so skip the opponent");
         				set.remove(1);
         				continue;
         			}
         			
         			matches.add(new ArrayList<>(set));
         			if(matches.size()>0 && matches.size()%3==0) {
-        				System.out.println("Inaiku match mudunchhhhhhhh");
+//        				System.out.println("Inaiku match mudunchhhhhhhh");
         				Set<List<Integer>> list = new HashSet<>(matches);
         				days_map.put(day, list);
-        				System.out.println("Day"+day+" matches "+matches);
+//        				System.out.println("Day"+day+" matches "+matches);
         				matches.clear();
         				day++;
         			}
-        			System.out.println("**************"+matches);
+//        			System.out.println("**************"+matches);
         			break;
         		}
         		
@@ -131,10 +131,10 @@ class CricketMatchScheduling {
         
         
         
-        System.out.println();
-        System.out.println();
-        
-        System.out.println("Final result");
+//        System.out.println();
+//        System.out.println();
+//        
+//        System.out.println("Final result");
         System.out.println();
         System.out.println();
         for(Map.Entry<Integer, Set<List<Integer>>> entry: days_map.entrySet())
